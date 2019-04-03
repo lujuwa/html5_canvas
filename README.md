@@ -1,10 +1,13 @@
 // 引入paint.js
+
 <script src="paint.js"></script>
 
 // 创建画布
+
 let paint = new Paint(document.querySelector('div.paint'));
 
 // 创建基本图形
+
 let rect = new Rect(50, 50, 80, 50);
 let circle = new Circle(50, 100, 40);
 let polygon = new Polygon({}, [50, 230], [90, 180], [130, 230]);
@@ -15,6 +18,7 @@ let multiLine = new MultiLine({}, [50, 380], [50, 430], [130, 430]);
 let ring = new Ring(50, 430, 40);
 
 // 创建复合图形
+
 let multiPath = new MultiPath()
     .addRange(
         rect.clone(), 
@@ -28,11 +32,13 @@ let multiPath = new MultiPath()
     ).left('+=100');
     
 // 绘制图形
+
 paint
     .draw(rect).draw(circle).draw(polygon).draw(text).draw(line)
     .draw(curve).draw(multiLine).draw(ring).draw(multiPath);
     
 // 修改样式
+
 rect
     .strokeStyle('red')
     .fill(false)
@@ -83,6 +89,7 @@ multiPath
     .lineWidth(2);
     
 // 动画使用
+
 rect
     .animate({
         left: '-=20', 
@@ -151,6 +158,7 @@ multiPath
     });
     
 // 事件绑定
+
 rect
     .fillStyle('skyblue')
     .on('click', () => alert('clicked rect'))
@@ -209,6 +217,7 @@ multiPath
     });
     
 // 路径类和画布样式表
+
 paint
     .draw(rect.clone().left('+=300').addClass('green'))
     .draw(circle.clone().left('+=300').id(1))
@@ -230,6 +239,7 @@ paint.style
     });
     
 // 画布路径筛选和操作
+
 paint.path
     .find('#1, rect')
     .animate({
@@ -247,6 +257,7 @@ paint.path
     });
     
 // 图形连接
+
 let circles = [
     circle.clone().left('+=500').radius(20).angle(0, 360), 
     circle.clone().offset('+=600', '+=100').radius(20).angle(0, 360), 
