@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>charts</title>
+		<style>
+			div.container {
+				width: 400px;
+				height: 300px;
+				border: black thin solid;
+				float: left;
+			}
+		</style>
+		<script src="paint.js"></script>
+		<script src="charts.js"></script>
+		<script>
+			window.onload = () => {
+				new LineChart(
+					document.querySelector('div.linechart'), 
+					{
+						title: 'LineChart', 
+						data: [
+							{name: 'a', value: 50}, 
+							{name: 'b', value: 80}, 
+							{name: 'c', value: 60}, 
+							{name: 'd', value: 30}, 
+							{name: 'e', value: 90}, 
+							{name: 'f', value: 40}
+						]
+					}
+				).show();
+				
+				new BarChart(
+					document.querySelector('div.barchart'), 
+					{
+						title: 'BarChart', 
+						data: [
+							{name: 'a', value: 50}, 
+							{name: 'b', value: 80}, 
+							{name: 'c', value: 60}, 
+							{name: 'd', value: 30}, 
+							{name: 'e', value: 90}, 
+							{name: 'f', value: 40}
+						]
+					}
+				).show();
+				
+				new BarChart2(
+					document.querySelector('div.barchart2'), 
+					{
+						title: 'BarChart2', 
+						data: [
+							{name: 'a', value: 50}, 
+							{name: 'b', value: 80}, 
+							{name: 'c', value: 60}, 
+							{name: 'd', value: 30}, 
+							{name: 'e', value: 90}, 
+							{name: 'f', value: 40}
+						]
+					}
+				).show();
+				
+				new RingChart(
+					document.querySelector('div.ringchart'), 
+					{
+						title: 'RingChart', 
+						data: [
+							{name: 'a', value: 50}, 
+							{name: 'b', value: 80}, 
+							{name: 'c', value: 60}, 
+							{name: 'd', value: 30}, 
+							{name: 'e', value: 90}, 
+							{name: 'f', value: 40}
+						]
+					}
+				).show();
+				
+				new FanChart(
+					document.querySelector('div.fanchart'), 
+					{
+						title: 'FanChart', 
+						data: [
+							{name: 'a', value: 50}, 
+							{name: 'b', value: 80}, 
+							{name: 'c', value: 60}, 
+							{name: 'd', value: 30}, 
+							{name: 'e', value: 90}, 
+							{name: 'f', value: 40}
+						]
+					}
+				).show();
+				
+				new FanChart2(
+					document.querySelector('div.fanchart2'), 
+					{
+						title: 'FanChart2', 
+						data: [
+							{name: 'a', value: 50}, 
+							{name: 'b', value: 80}, 
+							{name: 'c', value: 60}, 
+							{name: 'd', value: 30}, 
+							{name: 'e', value: 90}, 
+							{name: 'f', value: 40}
+						]
+					}
+				).show();
+				
+				new GraphChart(
+					document.querySelector('div.graphchart'), 
+					{
+						title: 'GraphChart', 
+						data: [
+							{name: 'a', value: 50}, 
+							{name: 'b', value: 80}, 
+							{name: 'c', value: 60}, 
+							{name: 'd', value: 30}, 
+							{name: 'e', value: 90}, 
+							{name: 'f', value: 40}
+						], 
+						connect: [
+							['a', 'b'], 
+							['a', 'd'], 
+							['a', 'f'], 
+							['b', 'c'], 
+							['b', 'd'], 
+							['b', 'e'], 
+							['c', 'a'], 
+							['c', 'f'], 
+							['e', 'd'], 
+							['e', 'f'], 
+							['f', 'd']
+						]
+					}
+				).show();
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div class="container linechart"></div>
+		<div class="container barchart"></div>
+		<div class="container barchart2"></div>
+		<div class="container ringchart"></div>
+		<div class="container fanchart"></div>
+		<div class="container fanchart2"></div>
+		<div class="container graphchart"></div>
+	</body>
+</html>
